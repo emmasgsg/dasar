@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>3D Schneekugel</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    model-viewer {
-      width: 100%;
-      max-width: 600px;
-      height: 600px;
-    }
-  </style>
-</head>
-<body>
-
-  <model-viewer
-    src="schneekugel.glb"
-    ios-src="schneekugel.usdz"
-    alt="3D Schneekugel"
-    auto-rotate
-    camera-controls
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    shadow-intensity="1"
-    exposure="1"
-    environment-image="neutral"
-  >
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tito's cave AR Test</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+  <body>
+<H2>Emmmmmmmmmmmmmmmmmmmmaaaaaaaaa</H2>
+  <model-viewer src="wurfel.glb"
+                ios-src="wurfel.usdz"
+                alt="Titos Cave"
+                ar
+                auto-rotate
+                camera-controls
+                ar-modes="webxr scene-viewer quick-look" 
+                environment-image="neutral">   
   </model-viewer>
+ <script>
+        async function checkARCoreCompatibility() {
+            const modelViewer = document.getElementById('model-viewer');
+            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
+            if (!isARCoreSupported) {
+                modelViewer.removeAttribute('ar');
+                modelViewer.removeAttribute('ar-modes');
+                alert('Your device is not compatible with AR features. You can still view the 3D model.');
+            }
+        }
 
-</body>
+        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+    </script>
+   </body>
 </html>
-
 
