@@ -50,11 +50,13 @@
     </style>
   </head>
   <body>
-    <button onclick="document.getElementById('player').play()">Play Audio</button>
-     <audio id="player">
-    <source src="Meer baden1.m4a" type="audio/mp4">
-    Your browser does not support the audio element.
-  </audio>
+<button onclick="document.getElementById('player').play()">Play Audio</button>
+
+<audio id="player" loop style="display:none;">
+  <source src="Meer baden1.m4a" type="audio/x-m4a">
+  Dein Browser unterstützt das Audio-Element leider nicht.
+</audio>
+
 <H2>meine ruinen</H2>
   <model-viewer src="kugel1.glb"
                 ios-src="kugel1.usdz"
