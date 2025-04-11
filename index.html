@@ -1,63 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR model</title>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-        
-      body {
-        background-color: white;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-family: Arial;
-        height: 100vh;
-        margin: 0;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR model</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      background-color: white;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Nach rechts schieben */
+      font-family: Arial;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 60px; /* Mehr Platz oben */
+      padding-right: 5vw; /* Etwas Luft zum Rand rechts */
+    }
 
-      model-viewer {
-        width: 80%;
-        height: 50%; /* Ensures it takes 50% of the screen height */
-        min-height: 300px; /* Sets a minimum height of 300px */
-        max-width: 800px; /* Sets a maximum width of 800px */
-        margin: 20px 0;
-        background-color: white;
-        flex-shrink: 0; /* Prevents shrinking of the model-viewer */
-      }
+    model-viewer {
+      width: 80%;
+      height: 50%;
+      min-height: 300px;
+      max-width: 800px;
+      margin: 20px 0;
+      background-color: white;
+      flex-shrink: 0;
+    }
 
-     .text-box {
-  width: 80%; /* Same width as model-viewer */
-  padding: 20px;
-  margin: 20px 0;
-  background-color: white;
-  max-width: 800px;
-  color: black;
-  text-align: justify; /* <-- Blocksatz! */
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
+    .text-box {
+      width: 80%;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: white;
+      max-width: 800px;
+      color: black;
+      text-align: justify;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
 
-      h2 {
-        margin: 10;
-        padding: 10px;
-        color: black;
-        font: arial;
-      }
-    </style>
-  </head>
-  <body>
-<button onclick="document.getElementById('player').play()">Play Audio</button>
+    h2 {
+      margin: 0;
+      padding: 10px;
+      color: black;
+      align-self: flex-end;
+    }
 
-<audio id="player" loop style="display:none;">
-  <source src="Meer baden1.m4a" type="audio/x-m4a">
-  Dein Browser unterstützt das Audio-Element leider nicht.
-</audio>
+    button {
+      align-self: flex-end;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
 
-<H2>meine ruinen</H2>
+  <button onclick="document.getElementById('player').play()">Play Audio</button>
+
+  <audio id="player" loop style="display:none;">
+    <source src="Meer baden1.m4a" type="audio/x-m4a">
+    Dein Browser unterstützt das Audio-Element leider nicht.
+  </audio>
+
+  <h2>meine ruinen</h2>
+
   <model-viewer src="kugel1.glb"
                 ios-src="kugel1.usdz"
                 alt="emma s ruinen"
@@ -66,14 +74,15 @@
                 animation-loop
                 animation-name="CubeAction"
                 camera-controls
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral">   
+                ar-modes="webxr scene-viewer quick-look"
+                environment-image="neutral">
   </model-viewer>
+
   <div class="text-box">
     <p>aus orten sind ruinen geworden . die erinnerungen und erlebnisse werden löchriger . die orte sind durch zeit und gespräche kaputt gegangen . sie schauen mich traurig an . ich sitze auf den bänken der ruinen und erinnere : immer grauer , immer verschwommener , immer fremder , immer ferner , immer sachlicher .
-</p>
-<p>bald nehme ich keine blumen mehr mit .</p>
+    </p>
+    <p>bald nehme ich keine blumen mehr mit .</p>
   </div>
-   
+
 </body>
 </html>
