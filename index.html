@@ -19,14 +19,15 @@
       padding-right: 10vw; /* statt 5vw → weiter zur Mitte */
     }
 
-    model-viewer {
-  width: 100%;
-  height: 80vh; /* Deutlich größer */
-  max-width: 1200px;
-  margin: 40px 0;
-  background-color: white;
-  flex-shrink: 0;
-}
+  model-viewer {
+      width: 85%;
+      height: 55%;
+      min-height: 320px;
+      max-width: 1000px;
+      margin: 20px 0;
+      background-color: white;
+      flex-shrink: 0;
+    }
 
 
     .text-box {
@@ -81,7 +82,10 @@
                 animation-name="CubeAction"
                 camera-controls
                 ar-modes="webxr scene-viewer quick-look"
-                environment-image="neutral">
+                environment-image="neutral"
+                camera-orbit="0deg 75deg 1m" 
+                field-of-view="15deg"
+>
   </model-viewer>
 
   <div class="text-box">
